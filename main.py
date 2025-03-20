@@ -112,7 +112,7 @@ if opcao == "4":
 
 
 #cc=["talles.lopes@idxdatacenters.com.br","rogerio.moura@idxdatacenters.com.br", "neuziron.santos@idxdatacenters.com.br", "antonio.santos@idxdatacenters.com.br", "simpson.oliveira@idxdatacenters.com.br", "tayna.santos@idxdatacenters.com.br", "igor.silva@idxdatacenters.com.br", "jose.nunes@idxdatacenters.com.br"]
-
+cc=["eabr0104@gmail.com"]
 print(f"Enviando para: {destinatario}, CC: {cc}")
 
 destinatarios_envio = [destinatario] + cc 
