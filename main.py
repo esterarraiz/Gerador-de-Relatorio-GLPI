@@ -7,8 +7,21 @@ from datetime import datetime
 import locale
 import streamlit as st
 
-locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
-data_atual = datetime.now().strftime("%d de %B de %Y").replace("marÃ§o", "Março")
+from datetime import datetime
+
+meses = {
+    "January": "Janeiro", "February": "Fevereiro", "March": "Março",
+    "April": "Abril", "May": "Maio", "June": "Junho",
+    "July": "Julho", "August": "Agosto", "September": "Setembro",
+    "October": "Outubro", "November": "Novembro", "December": "Dezembro"
+}
+
+data_atual = datetime.now().strftime("%d de %B de %Y")
+for eng, pt in meses.items():
+    data_atual = data_atual.replace(eng, pt)
+
+print(data_atual)  
+
 hora_atual = datetime.now().strftime("%H:%M")
 
 print("\n----- SEJA BEM-VINDO! -----\n")
@@ -98,7 +111,7 @@ if opcao == "4":
     destinatario = input("Digite o e-mail do destinatário: ")
 
 
-cc=["talles.lopes@idxdatacenters.com.br","rogerio.moura@idxdatacenters.com.br", "neuziron.santos@idxdatacenters.com.br", "antonio.santos@idxdatacenters.com.br", "simpson.oliveira@idxdatacenters.com.br", "tayna.santos@idxdatacenters.com.br", "igor.silva@idxdatacenters.com.br", "jose.nunes@idxdatacenters.com.br"]
+#cc=["talles.lopes@idxdatacenters.com.br","rogerio.moura@idxdatacenters.com.br", "neuziron.santos@idxdatacenters.com.br", "antonio.santos@idxdatacenters.com.br", "simpson.oliveira@idxdatacenters.com.br", "tayna.santos@idxdatacenters.com.br", "igor.silva@idxdatacenters.com.br", "jose.nunes@idxdatacenters.com.br"]
 
 print(f"Enviando para: {destinatario}, CC: {cc}")
 
