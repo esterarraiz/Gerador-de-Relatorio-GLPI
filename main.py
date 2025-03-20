@@ -3,9 +3,9 @@ from enviar_email import EnvioEmail
 from formatacao_email import EmailFormatar
 from gerar_relatorios import Relatorio
 import getpass
-import msvcrt
 from datetime import datetime
 import locale
+import streamlit as st
 
 locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
 data_atual = datetime.now().strftime("%d de %B de %Y").replace("marÃ§o", "Março")
@@ -34,7 +34,8 @@ while op not in usuarios:
     op = input("Digite o número correspondente ao usuário desejado: ")
 
 usuario = usuarios[op]
-senha = getpass.getpass("Digite a senha (GLPI): ")
+senha = st.text_input("Digite a senha (GLPI):", type="password")
+
 
 glpi = GLPIBot(usuario, senha)
 glpi.login()
@@ -77,7 +78,7 @@ print("\nDados do E-mail:")
 
 remetente = usuario + "@idxdatacenters.com.br"
 print(f"\nRemetente: {remetente}")
-senha_email = getpass.getpass("Senha do seu E-mail: ")
+senha_email = st.text_input("Senha do seu E-mail: ", type="password")
 nome=usuario.replace("."," ").title()
 
 destinatarios = {
@@ -122,6 +123,5 @@ conteudo_email = email_formatter.formatar_email(
 email_sender = EnvioEmail(remetente, senha)
 email_sender.enviar_email(destinatario, f"[IDX] Relatório de SLAs e Chamados Sem Técnico - {data_atual} {hora_atual}", conteudo_email, cc)
 
-print("Aperte qualquer tecla para sair...")
-msvcrt.getch()
+st.write("Relatório gerado com sucesso!")
 
