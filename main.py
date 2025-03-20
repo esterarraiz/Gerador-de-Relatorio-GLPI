@@ -136,5 +136,6 @@ conteudo_email = email_formatter.formatar_email(
 email_sender = EnvioEmail(remetente, senha)
 email_sender.enviar_email(destinatario, f"[IDX] Relatório de SLAs e Chamados Sem Técnico - {data_atual} {hora_atual}", conteudo_email, cc)
 
-st.write("Relatório gerado com sucesso!")
+print("Aperte qualquer tecla para sair...")
+msvcrt.getch()
 
