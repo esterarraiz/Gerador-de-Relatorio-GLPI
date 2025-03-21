@@ -3,27 +3,13 @@ from enviar_email import EnvioEmail
 from formatacao_email import EmailFormatar
 from gerar_relatorios import Relatorio
 import getpass
+import msvcrt
 from datetime import datetime
 import locale
-import streamlit as st
 
-from datetime import datetime
-
-meses = {
-    "January": "Janeiro", "February": "Fevereiro", "March": "Março",
-    "April": "Abril", "May": "Maio", "June": "Junho",
-    "July": "Julho", "August": "Agosto", "September": "Setembro",
-    "October": "Outubro", "November": "Novembro", "December": "Dezembro"
-}
-
-data_atual = datetime.now().strftime("%d de %B de %Y")
-for eng, pt in meses.items():
-    data_atual = data_atual.replace(eng, pt)
-
-print(data_atual)  
-
+locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
+data_atual = datetime.now().strftime("%d de %B de %Y").replace("marÃ§o", "Março")
 hora_atual = datetime.now().strftime("%H:%M")
-
 print("\n----- SEJA BEM-VINDO! -----\n")
 print("Escolha um usuário para acessar o sistema GLPI:\n")
 
@@ -47,8 +33,7 @@ while op not in usuarios:
     op = input("Digite o número correspondente ao usuário desejado: ")
 
 usuario = usuarios[op]
-senha = st.text_input("Digite a senha (GLPI):", type="password")
-
+senha = getpass.getpass("Digite a senha (GLPI): ")
 
 glpi = GLPIBot(usuario, senha)
 glpi.login()
@@ -89,9 +74,11 @@ for categoria, lista in dados_relatorio.items():
 print("\n--------------------------")
 print("\nDados do E-mail:")
 
+print(dados_relatorio1.keys())
+
 remetente = usuario + "@idxdatacenters.com.br"
 print(f"\nRemetente: {remetente}")
-senha_email = st.text_input("Senha do seu E-mail: ", type="password")
+senha_email = getpass.getpass("Senha do seu E-mail: ")
 nome=usuario.replace("."," ").title()
 
 destinatarios = {
@@ -111,12 +98,12 @@ if opcao == "4":
     destinatario = input("Digite o e-mail do destinatário: ")
 
 
-cc=["talles.lopes@idxdatacenters.com.br","rogerio.moura@idxdatacenters.com.br", "neuziron.santos@idxdatacenters.com.br", "antonio.santos@idxdatacenters.com.br", "simpson.oliveira@idxdatacenters.com.br", "tayna.santos@idxdatacenters.com.br", "igor.silva@idxdatacenters.com.br", "jose.nunes@idxdatacenters.com.br"]
-
+#cc=["talles.lopes@idxdatacenters.com.br","rogerio.moura@idxdatacenters.com.br", "neuziron.santos@idxdatacenters.com.br", "antonio.santos@idxdatacenters.com.br", "simpson.oliveira@idxdatacenters.com.br", "tayna.santos@idxdatacenters.com.br", "igor.silva@idxdatacenters.com.br", "jose.nunes@idxdatacenters.com.br"]
+cc=["avbr0104@gmail.com"]
 print(f"Enviando para: {destinatario}, CC: {cc}")
 
 destinatarios_envio = [destinatario] + cc 
-email_formatter = EmailFormatar(remetente, destinatario, nome)
+email_formatter = EmailFormatar(remetente, destinatarios_envio, nome)
 conteudo_email = email_formatter.formatar_email(
 
     dados_relatorio1["NOC"], dados_relatorio1["SOC"], dados_relatorio1["N1 Palmas"], 

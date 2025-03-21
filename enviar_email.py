@@ -15,9 +15,10 @@ class EnvioEmail:
         msg['To'] = destinatario
         msg['Subject'] = assunto
 
+        # Adiciona os e-mails em cópia, se houver
         if cc:
             msg['Cc'] = ", ".join(cc)
-            destinatarios = [destinatario] + cc
+            destinatarios = [destinatario] + cc  # Inclui os CC na lista final de destinatários
         else:
             destinatarios = [destinatario]
 
@@ -29,6 +30,7 @@ class EnvioEmail:
             server.starttls()
             server.login(self.email, self.senha)
 
+            # Enviar o e-mail para todos os destinatários (incluindo CC)
             server.sendmail(self.email, destinatarios, msg.as_string())
             print("E-mail enviado com sucesso!")
 

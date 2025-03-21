@@ -11,7 +11,7 @@ class EmailFormatar:
         self.hora_atual = datetime.now().strftime("%H:%M")
     
     def gerar_tabela(self, categoria, lista_chamados):
-        categoria = categoria.replace(" ", "&nbsp;")
+        categoria = categoria.replace(" ", "&nbsp;")  # Substitui espaços por espaço sem quebra
 
         if not lista_chamados:
             return f"""
