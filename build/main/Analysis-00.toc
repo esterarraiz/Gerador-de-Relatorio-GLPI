@@ -503,10 +503,6 @@
    'C:\\Users\\Ester '
    'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\__init__.py',
    'PYMODULE'),
-  ('_colorize',
-   'C:\\Users\\Ester '
-   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_colorize.py',
-   'PYMODULE'),
   ('subprocess',
    'C:\\Users\\Ester '
    'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\subprocess.py',
@@ -515,13 +511,17 @@
    'C:\\Users\\Ester '
    'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\signal.py',
    'PYMODULE'),
-  ('stringprep',
+  ('_colorize',
    'C:\\Users\\Ester '
-   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\stringprep.py',
+   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_colorize.py',
    'PYMODULE'),
   ('_py_abc',
    'C:\\Users\\Ester '
    'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_py_abc.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\Ester '
+   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\stringprep.py',
    'PYMODULE'),
   ('tracemalloc',
    'C:\\Users\\Ester '
@@ -1431,33 +1431,13 @@
    'C:\\Users\\Ester '
    'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\certifi\\py.typed',
    'DATA'),
-  ('selenium\\webdriver\\common\\devtools\\v131\\py.typed',
-   'C:\\Users\\Ester '
-   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\common\\devtools\\v131\\py.typed',
-   'DATA'),
   ('selenium\\webdriver\\common\\linux\\selenium-manager',
    'C:\\Users\\Ester '
    'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\common\\linux\\selenium-manager',
    'DATA'),
-  ('selenium\\webdriver\\firefox\\webdriver_prefs.json',
+  ('selenium\\webdriver\\common\\macos\\selenium-manager',
    'C:\\Users\\Ester '
-   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\firefox\\webdriver_prefs.json',
-   'DATA'),
-  ('selenium\\py.typed',
-   'C:\\Users\\Ester '
-   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\py.typed',
-   'DATA'),
-  ('selenium\\webdriver\\common\\devtools\\v132\\py.typed',
-   'C:\\Users\\Ester '
-   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\common\\devtools\\v132\\py.typed',
-   'DATA'),
-  ('selenium\\webdriver\\remote\\getAttribute.js',
-   'C:\\Users\\Ester '
-   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\getAttribute.js',
-   'DATA'),
-  ('selenium\\webdriver\\remote\\findElements.js',
-   'C:\\Users\\Ester '
-   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\findElements.js',
+   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\common\\macos\\selenium-manager',
    'DATA'),
   ('selenium\\webdriver\\common\\devtools\\v133\\py.typed',
    'C:\\Users\\Ester '
@@ -1467,13 +1447,33 @@
    'C:\\Users\\Ester '
    'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\common\\mutation-listener.js',
    'DATA'),
-  ('selenium\\webdriver\\common\\macos\\selenium-manager',
-   'C:\\Users\\Ester '
-   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\common\\macos\\selenium-manager',
-   'DATA'),
   ('selenium\\webdriver\\remote\\isDisplayed.js',
    'C:\\Users\\Ester '
    'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\isDisplayed.js',
+   'DATA'),
+  ('selenium\\py.typed',
+   'C:\\Users\\Ester '
+   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\py.typed',
+   'DATA'),
+  ('selenium\\webdriver\\remote\\findElements.js',
+   'C:\\Users\\Ester '
+   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\findElements.js',
+   'DATA'),
+  ('selenium\\webdriver\\remote\\getAttribute.js',
+   'C:\\Users\\Ester '
+   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\getAttribute.js',
+   'DATA'),
+  ('selenium\\webdriver\\firefox\\webdriver_prefs.json',
+   'C:\\Users\\Ester '
+   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\firefox\\webdriver_prefs.json',
+   'DATA'),
+  ('selenium\\webdriver\\common\\devtools\\v132\\py.typed',
+   'C:\\Users\\Ester '
+   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\common\\devtools\\v132\\py.typed',
+   'DATA'),
+  ('selenium\\webdriver\\common\\devtools\\v131\\py.typed',
+   'C:\\Users\\Ester '
+   'Matos\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\common\\devtools\\v131\\py.typed',
    'DATA'),
   ('selenium\\webdriver\\common\\devtools\\v85\\py.typed',
    'C:\\Users\\Ester '

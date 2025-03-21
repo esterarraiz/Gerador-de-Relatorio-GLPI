@@ -98,8 +98,7 @@ if opcao == "4":
     destinatario = input("Digite o e-mail do destinatário: ")
 
 
-#cc=["talles.lopes@idxdatacenters.com.br","rogerio.moura@idxdatacenters.com.br", "neuziron.santos@idxdatacenters.com.br", "antonio.santos@idxdatacenters.com.br", "simpson.oliveira@idxdatacenters.com.br", "tayna.santos@idxdatacenters.com.br", "igor.silva@idxdatacenters.com.br", "jose.nunes@idxdatacenters.com.br"]
-cc=["avbr0104@gmail.com"]
+cc=["talles.lopes@idxdatacenters.com.br","rogerio.moura@idxdatacenters.com.br", "neuziron.santos@idxdatacenters.com.br", "antonio.santos@idxdatacenters.com.br", "simpson.oliveira@idxdatacenters.com.br", "tayna.santos@idxdatacenters.com.br", "igor.silva@idxdatacenters.com.br", "jose.nunes@idxdatacenters.com.br"]
 print(f"Enviando para: {destinatario}, CC: {cc}")
 
 destinatarios_envio = [destinatario] + cc 
