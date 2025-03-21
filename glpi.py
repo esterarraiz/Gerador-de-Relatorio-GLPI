@@ -132,7 +132,7 @@ class GLPIBot:
                 try:
                     data_solucao = datetime.strptime(tempo_solucao.split()[0], "%d/%m/%Y").date()
 
-                    if data_solucao == data_hoje:
+                    if data_solucao == data_hoje and numero not in numeros_chamados1:
                         lista_chamados2.append({
                             "numero": numero,
                             "titulo": titulo,
