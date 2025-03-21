@@ -5,6 +5,7 @@ class Relatorio:
         self.soc_list = []
         self.n1_palmas_list = []
         self.n1_araguaina_list = []
+        self.n1_paraiso_list = []
         self.dc_list = []
         self.infra_list = []
         self.excluir_list = []
@@ -36,6 +37,8 @@ class Relatorio:
                 self.n1_araguaina_list.append(chamado)
             elif "CRP" in observador:
                 self.crp_list.append(chamado)
+            elif "Paraiso" in observador:
+                self.n1_paraiso_list.append(chamado)
             elif "Infra" in categoria:
                 self.infra_list.append(chamado) 
             elif "Telefonia" in categoria:
@@ -52,6 +55,7 @@ class Relatorio:
             "SOC": self.soc_list,
             "N1 Palmas": self.n1_palmas_list,
             "N1 Araguaína": self.n1_araguaina_list,
+            "N1 Paraiso": self.n1_paraiso_list,
             "DC": self.dc_list,
             "Infra": self.infra_list,
             "Telefonia": self.telefonia_list,

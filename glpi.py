@@ -109,18 +109,6 @@ class GLPIBot:
         lista_chamados2 = []
         data_hoje = datetime.today().date()
 
-        """for chamado in chamados:
-            numero = chamado.find_element(By.XPATH, './td[2]/span').text.strip().replace(" ", "")  
-            if numero not in numeros_chamados1 and numero.isdigit():
-                titulo = chamado.find_element(By.XPATH, './td[3]').text.strip()  
-                observador = chamado.find_element(By.XPATH, './td[18]').text.strip()  
-                categoria = chamado.find_element(By.XPATH, './td[11]').text.strip()  
-                tempo_solucao = chamado.find_element(By.XPATH, './td[16]').text.strip().replace("-", "/")
-                lista_chamados2.append({"numero": numero, "titulo": titulo, "observador": observador, "categoria": categoria})
-
-        self.driver.quit()
-        return lista_chamados2"""
-
         for chamado in chamados:
             numero = chamado.find_element(By.XPATH, './td[2]/span').text.strip().replace(" ", "")
             if numero not in numeros_chamados1 and numero.isdigit():
