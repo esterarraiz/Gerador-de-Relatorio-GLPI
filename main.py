@@ -58,7 +58,7 @@ print("\nRelatório gerado com sucesso!\n")
 
 print("\n----- Relatório -----")
 print("\nSLAS VENCIDOS:")
-for categoria, lista in dados_relatorio.items():
+for categoria, lista in dados_relatorio1.items():
     print(f"{categoria}: {lista}")
 
 print("\n--------------------------\nSLAS QUE VENCEM HOJE:")
