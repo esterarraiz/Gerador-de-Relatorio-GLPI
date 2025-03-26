@@ -23,7 +23,10 @@ class GLPIBot:
         login_button = WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.NAME, "submit")))
         login_button.click()
 
-        WebDriverWait(self.driver, 10)
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: driver.execute_script("return document.readyState") == "complete"
+        )
+
 
     # Extrair chamados Sem Técnico
     def extrair_chamados(self):
@@ -63,13 +66,13 @@ class GLPIBot:
 
         WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "search-results")))
 
-        dropdown = WebDriverWait(self.driver, 20).until(
+        """dropdown = WebDriverWait(self.driver, 20).until(
             EC.presence_of_element_located((By.XPATH, '//*[@id="massformTicket"]/div/div[3]/div/span[1]/select'))
         )
         select = Select(dropdown)
         select.select_by_value("150")
 
-        time.sleep(3)
+        time.sleep(3)"""
 
         chamados = WebDriverWait(self.driver, 20).until(
             EC.presence_of_all_elements_located((By.XPATH, '//table[contains(@class, "search-results")]//tbody/tr'))
@@ -94,13 +97,13 @@ class GLPIBot:
 
         WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "search-results")))
 
-        dropdown = WebDriverWait(self.driver, 20).until(
+        """dropdown = WebDriverWait(self.driver, 20).until(
             EC.presence_of_element_located((By.XPATH, '//*[@id="massformTicket"]/div/div[3]/div/span[1]/select'))
         )
         select = Select(dropdown)
         select.select_by_value("150")
 
-        time.sleep(3)
+        time.sleep(3)"""
 
         chamados = WebDriverWait(self.driver, 20).until(
             EC.presence_of_all_elements_located((By.XPATH, '//table[contains(@class, "search-results")]//tbody/tr'))
@@ -109,10 +112,23 @@ class GLPIBot:
         lista_chamados2 = []
         data_hoje = datetime.today().date()
 
+        """for chamado in chamados:
+            numero = chamado.find_element(By.XPATH, './td[2]/span').text.strip().replace(" ", "")  
+            if numero not in numeros_chamados1 and numero.isdigit():
+                titulo = chamado.find_element(By.XPATH, './td[3]').text.strip()  
+                observador = chamado.find_element(By.XPATH, './td[18]').text.strip()  
+                categoria = chamado.find_element(By.XPATH, './td[11]').text.strip()  
+                tempo_solucao = chamado.find_element(By.XPATH, './td[16]').text.strip().replace("-", "/")
+                lista_chamados2.append({"numero": numero, "titulo": titulo, "observador": observador, "categoria": categoria})
+
+        self.driver.quit()
+        return lista_chamados2"""
+
         for chamado in chamados:
             numero = chamado.find_element(By.XPATH, './td[2]/span').text.strip().replace(" ", "")
             if numero not in numeros_chamados1 and numero.isdigit():
                 titulo = chamado.find_element(By.XPATH, './td[3]').text.strip()
+                status = chamado.find_element(By.XPATH, './td[5]').text.strip()
                 observador = chamado.find_element(By.XPATH, './td[18]').text.strip()
                 categoria = chamado.find_element(By.XPATH, './td[11]').text.strip()
                 tempo_solucao = chamado.find_element(By.XPATH, './td[17]').text.strip().replace("-", "/")
@@ -120,7 +136,7 @@ class GLPIBot:
                 try:
                     data_solucao = datetime.strptime(tempo_solucao.split()[0], "%d/%m/%Y").date()
 
-                    if data_solucao == data_hoje and numero not in numeros_chamados1:
+                    if data_solucao == data_hoje and status != "Pendente" and numero not in numeros_chamados1:
                         lista_chamados2.append({
                             "numero": numero,
                             "titulo": titulo,
