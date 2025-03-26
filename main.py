@@ -74,8 +74,6 @@ for categoria, lista in dados_relatorio.items():
 print("\n--------------------------")
 print("\nDados do E-mail:")
 
-print(dados_relatorio1.keys())
-
 remetente = usuario + "@idxdatacenters.com.br"
 print(f"\nRemetente: {remetente}")
 senha_email = getpass.getpass("Senha do seu E-mail: ")
