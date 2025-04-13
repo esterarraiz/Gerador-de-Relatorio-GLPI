@@ -11,29 +11,8 @@ locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
 data_atual = datetime.now().strftime("%d de %B de %Y").replace("marÃ§o", "Março")
 hora_atual = datetime.now().strftime("%H:%M")
 print("\n----- SEJA BEM-VINDO! -----\n")
-print("Escolha um usuário para acessar o sistema GLPI:\n")
-
-usuarios = {
-    "1": "ester.matos",
-    "2": "joao.gomes",
-    "3": "luis.andrade",
-    "4": "zairo.cunha"
-}
-
-for key, value in usuarios.items():
-    print(f"{key} - {value}")
-
-op = input("\nDigite o número correspondente ao usuário desejado: ")
-
-print(f"Você escolheu o usuário: {usuarios[op]}")
-
-
-while op not in usuarios:
-    print("Opção inválida. Tente novamente.")
-    op = input("Digite o número correspondente ao usuário desejado: ")
-
-usuario = usuarios[op]
-senha = getpass.getpass("Digite a senha (GLPI): ")
+usuario = "seu_usuario"
+senha = "sua_senha"
 
 glpi = GLPIBot(usuario, senha)
 glpi.login()
@@ -74,29 +53,14 @@ for categoria, lista in dados_relatorio.items():
 print("\n--------------------------")
 print("\nDados do E-mail:")
 
-remetente = usuario + "@idxdatacenters.com.br"
+remetente = usuario + "dominio"
 print(f"\nRemetente: {remetente}")
-senha_email = getpass.getpass("Senha do seu E-mail: ")
+senha_email = "senha_do_remetente"
 nome=usuario.replace("."," ").title()
-
-destinatarios = {
-        "1": "wanessa.ferreira@idxdatacenters.com.br",
-        "2": "talles.lopes@idxdatacenters.com.br",
-        "3": "simpson.oliveira@idxdatacenters.com.br",
-        "4": "Outro (digitar manualmente)"
-    }
-    
-print("\nEscolha o destinatário do relatório:\n")
-for key, email in destinatarios.items():
-    print(f"{key} - {email}")
-    
-opcao = input("\nDigite o número da opção desejada: ")
-destinatario = destinatarios[opcao]
-if opcao == "4":
-    destinatario = input("Digite o e-mail do destinatário: ")
+destinatario = "Coloque o destinatario"
 
 
-cc=["talles.lopes@idxdatacenters.com.br","rogerio.moura@idxdatacenters.com.br", "neuziron.santos@idxdatacenters.com.br", "antonio.santos@idxdatacenters.com.br", "simpson.oliveira@idxdatacenters.com.br", "tayna.santos@idxdatacenters.com.br", "igor.silva@idxdatacenters.com.br", "jose.nunes@idxdatacenters.com.br"]
+cc=["Lista de destinatarios copias"]
 print(f"Enviando para: {destinatario}, CC: {cc}")
 
 destinatarios_envio = [destinatario] + cc 
@@ -118,7 +82,7 @@ conteudo_email = email_formatter.formatar_email(
 
 
 email_sender = EnvioEmail(remetente, senha)
-email_sender.enviar_email(destinatario, f"[IDX] Relatório de SLAs e Chamados Sem Técnico - {data_atual} {hora_atual}", conteudo_email, cc)
+email_sender.enviar_email(destinatario, f"Relatório de SLAs e Chamados Sem Técnico - {data_atual} {hora_atual}", conteudo_email, cc)
 
 print("Aperte qualquer tecla para sair...")
 msvcrt.getch()
