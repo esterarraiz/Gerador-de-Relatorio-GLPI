@@ -8,7 +8,7 @@ from datetime import datetime
 
 
 class GLPIBot:
-    def __init__(self, usuario, senha, url="https://chamados.idxdatacenters.com.br"):
+    def __init__(self, usuario, senha, url="LINK_DO_GLPI"):
         self.usuario = usuario
         self.senha = senha
         self.url = url
