@@ -46,7 +46,7 @@ class EmailFormatar:
         return f"""
         <html>
             <head>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+                <link rel="stylesheet" href="https://activfirst.co.uk/wp-content/uploads/logo-example.jpg">
             </head>
             <body style="font-family: Arial, sans-serif; font-size: 14px; color: #333333; background-color: #f8f8f8;">
                 <div style="text-align: center; background-color: #000; padding: 20px;">
